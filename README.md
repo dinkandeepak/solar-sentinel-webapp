@@ -40,6 +40,12 @@ This creates a temporary `trycloudflare.com` URL while your machine stays online
 3. Select repo/branch and set file path to `streamlit_app.py`.
 4. Deploy.
 
+If GitHub CLI auth is already configured on your machine, you can create/push a repo in one command:
+
+```bash
+powershell -ExecutionPolicy Bypass -File .\deploy.ps1 -RepoName solar-sentinel-webapp -Visibility public
+```
+
 ### Option 2: Render/Railway/Fly (Docker)
 
 This repo includes a `Dockerfile` that runs:
