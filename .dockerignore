@@ -1,0 +1,9 @@
+__pycache__/
+.pytest_cache/
+.mypy_cache/
+.streamlit/secrets.toml
+cloudflared.exe
+cloudflared.log
+*.pyc
+*.pyo
+*.pyd
