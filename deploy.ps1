@@ -19,7 +19,14 @@ if (-not (Test-Path $Gh)) {
 
 Set-Location $ProjectRoot
 
-& $Gh auth status | Out-Null
+try {
+    & $Gh auth status *> $null
+} catch {
+    throw "GitHub CLI is not authenticated. Run: gh auth login"
+}
+if ($LASTEXITCODE -ne 0) {
+    throw "GitHub CLI is not authenticated. Run: gh auth login"
+}
 
 $HasOrigin = (& $Git remote) -contains "origin"
 if (-not $HasOrigin) {
